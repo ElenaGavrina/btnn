@@ -1,0 +1,25 @@
+from pytube import YouTube
+from tkinter import *
+
+def clicked():
+    
+    try:
+        yt_obj =YouTube(??????)
+
+        filtres =yt_obj.streams.filter(progressive=True, file_extension='mp4')
+
+        filtres.get_highest_resolution().download()
+        print('Video downloaded Successfully')
+    except Exception as e:
+        print(e)
+
+window = Tk()
+window.title('Bienvenue!')
+window.geometry('400x400')
+lbl = Label(window, text = "Введите ссылку")
+lbl.grid(column =0, row =0)
+txt = Entry(window, width = 30)
+txt.grid(column =1, row = 0)
+btn =Button(window, text ='Download', command=clicked )
+btn.grid(column =2, row =0)
+window.mainloop()
