@@ -4,7 +4,7 @@ from tkinter import *
 def clicked():
     
     try:
-        yt_obj =YouTube(??????)
+        yt_obj =YouTube(youtube_video_url.get())
 
         filtres =yt_obj.streams.filter(progressive=True, file_extension='mp4')
 
